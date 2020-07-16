@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        .main{
+            height: auto;
+            background-image: linear-gradient(rgb(23, 23, 143),rgb(32, 32, 250));
+        }
+        .card{
+            height: 500px;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+    </style>
+    <title>fibonacci calculator</title>
+  </head>
+  <body>
+
+    <section class="container-fluid main d-flex justify-content-center align-items-center">
+        <div class="card col-md-8">
+            <h2 class="pt-4">Fibonacci Calculator</h2>
+            <img src="fibo.jpg" class="card-img-top pt-3" alt="...">
+            <div class="card-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Number</label>
+                  <input type="number" class="form-control" id="number" placeholder="Enter number........">
+                </div>
+                <button class="btn btn-primary" onclick="fibonacci()">Submit</button>
+                <table>
+                    <tr>
+                        <th><h3>your fibonacci outpur : </h3></th>
+                        <td> <h3 id="result"></h3></td>
+                    </tr>
+                </table>
+            </div>
+          </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+
+        function fibonacci(){
+            let n = document.getElementById('number').value;
+            let fibo = [0, 1];
+            for(let i = 2; i<=n ;i++){
+                fibo[i] = fibo[i-1] + fibo[i-2];
+            }
+            document.getElementById('result').innerHTML = fibo;
+        }
+    </script>
+    
+  </body>
+</html>
